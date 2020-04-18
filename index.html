@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script src="web/comfycipher.js"></script>
+	</head>
+	<body>
+		<script>
+		const text = "Call time is at 08:00 on October 4, 2432.";//"Whoa, I'd never seen a real Shrink Ray before!";//"I saw a very suspicious evil-looking cat walking around here!";// "Happy Birthday Starlet_Blossom!";
+		console.log( window.ComfyCipher );
+		console.log( "Reverse:",
+			ComfyCipher.Encode.Reverse( text ),
+			" -> ",
+			ComfyCipher.Decode.Reverse( ComfyCipher.Encode.Reverse( text ) )
+		);
+		console.log( "Base64:",
+			ComfyCipher.Encode.Base64( text ),
+			" -> ",
+			ComfyCipher.Decode.Base64( ComfyCipher.Encode.Base64( text ) )
+		);
+		console.log( "Caesar:",
+			ComfyCipher.Encode.Caesar( text, 15 ),
+			" -> ",
+			ComfyCipher.Decode.Caesar( ComfyCipher.Encode.Caesar( text, 15 ), 15 )
+		);
+		console.log( "Rot13:",
+			ComfyCipher.Encode.Rot13( text ),
+			" -> ",
+			ComfyCipher.Decode.Rot13( ComfyCipher.Encode.Rot13( text ) )
+		);
+		console.log( "Morse:",
+			ComfyCipher.Encode.Morse( text ),
+			" -> ",
+			ComfyCipher.Decode.Morse( ComfyCipher.Encode.Morse( text ) )
+		);
+		</script>
+	</body>
+</html>

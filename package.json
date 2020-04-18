@@ -1,0 +1,38 @@
+{
+  "name": "comfycipher",
+  "version": "1.0.0",
+  "description": "Various Message Cipher Encryption/Decryption Methods in JavaScript!",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all --sequential build:*",
+    "build:terser": "terser --compress --mangle --toplevel --source-map --output ./web/comfycipher.min.js ./web/comfycipher.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/ComfyCipher.git"
+  },
+  "keywords": [
+    "Cipher",
+    "Encryption",
+    "Decryption",
+    "Encrypt",
+    "Decrypt",
+    "Caesar",
+    "Cryptography",
+    "Messages"
+  ],
+  "author": "Instafluff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/ComfyCipher/issues"
+  },
+  "homepage": "https://github.com/instafluff/ComfyCipher#readme",
+  "dependencies": {
+    "webwebweb": "^1.2.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "terser": "^4.6.11"
+  }
+}
