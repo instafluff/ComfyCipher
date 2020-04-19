@@ -1,6 +1,6 @@
 {
   "name": "comfycipher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Various Message Cipher Encryption/Decryption Methods in JavaScript!",
   "main": "index.js",
   "scripts": {
