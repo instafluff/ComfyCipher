@@ -73,6 +73,40 @@ comfyCipher.Decode[ "Morse" ] = function( text ) {
 	return text.split( " " ).map( x => morseReverse[ x ] ).join( "" );
 };
 
+comfyCipher.Encode[ "Binary" ] = function( text ) {
+	var result = "";
+	for( var i = 0; i < text.length; i++ ) {
+		var bin = text[i].charCodeAt().toString( 2 );
+		result += Array( 8 - bin.length + 1 ).join( "0" ) + bin;
+	}
+	return result;
+};
+comfyCipher.Decode[ "Binary" ] = function( text ) {
+	var result = "";
+	var arr = text.match(/.{1,8}/g);
+	for( var i = 0; i < arr.length; i++ ) {
+		result += String.fromCharCode( parseInt( arr[i], 2 ).toString( 10 ) );
+	}
+	return result;
+};
+
+comfyCipher.Encode[ "Hexadecimal" ] = function( text ) {
+    var result = "";
+    for( var i = 0; i < text.length; i++ ) {
+        var hex = text[i].charCodeAt().toString( 16 );
+        result += ("0"+hex).slice(-2);
+    }
+    return result;
+};
+comfyCipher.Decode[ "Hexadecimal" ] = function( text ) {
+	var result = "";
+	var arr = text.match(/.{1,2}/g);
+	for( var i = 0; i < arr.length; i++ ) {
+		result += String.fromCharCode( parseInt( arr[i], 16 ).toString(10) );
+	}
+	return result;
+};
+
 // Expose everything, for browser and Node..
 if (typeof module !== "undefined" && module.exports) {
     module.exports = comfyCipher;

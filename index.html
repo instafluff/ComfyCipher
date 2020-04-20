@@ -31,6 +31,16 @@
 			" -> ",
 			ComfyCipher.Decode.Morse( ComfyCipher.Encode.Morse( text ) )
 		);
+		console.log( "Binary:",
+			ComfyCipher.Encode.Binary( text ),
+			" -> ",
+			ComfyCipher.Decode.Binary( ComfyCipher.Encode.Binary( text ) )
+		);
+		console.log( "Hexadecimal:",
+			ComfyCipher.Encode.Hexadecimal( text ),
+			" -> ",
+			ComfyCipher.Decode.Hexadecimal( ComfyCipher.Encode.Hexadecimal( text ) )
+		);
 		</script>
 	</body>
 </html>
